@@ -1,0 +1,471 @@
+header {
+    position: relative; /* Allows positioning of child elements if needed */
+    height: 100vh; /* Full viewport height for a dramatic effect */
+    background-image: url("images/istockphoto-1311423416-612x612.jpg"); /* Set your image here */
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the image */
+    color: white; /* Text color for better visibility */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; /* Position the nav bar above the header */
+    top: 20px; /* Space from the top */
+    left: 20px; /* Space from the left */
+    width: calc(100% - 40px); /* Full width minus margins */
+    z-index: 10; /* Ensure navigation is on top */
+}
+
+.logo {
+    font-size: 24px; /* Logo text size */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Align links in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.info {
+    position: absolute; /* Position it absolutely within the header */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+    padding: 10px; /* Some padding */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    z-index: 2; /* Ensure info is below nav */
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color:lightgreen;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888; /* Gray border */
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color:black;
+    float: right; /* Float to the right */
+    font-size: 28px; /* Big font */
+    font-weight: bold; /* Bold */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+.modal-content form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 5px; /* Space between the inputs */
+}
+
+label {
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+input, textarea {
+    padding: 5px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    width: 50%; /* Full width of the modal */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 5px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+#services {
+    padding: 40px; /* Space around the section */
+    background-color: #cccb; /* Light background color */
+    text-align: center; /* Center text */
+}
+.service-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between cards */
+}
+.service-card {
+    background-color:brown; /* White background for cards */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside cards */
+    width: 250px; /* Fixed width for cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Animation on hover */
+}
+.service-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+    .service-card {
+        flex: 1 1 90%; /* Stack cards on smaller screens */
+    }
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below heading */
+}
+#gallery {
+    padding: 50px 20px;
+    background-color:lightgray;
+    text-align: center;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+.slider-container p {
+    font-size: 2rem; /* Increased font size */
+    line-height: 1.8; /* Better readability */
+    margin-bottom: 1.5rem; /* Space below the paragraph */
+    text-align: center; /* Center aligned for aesthetics */
+    padding: 0 20px; /* Add padding for better spacing */
+}
+#gallery h2 {
+    font-size: 2.5em; /* Increase size as needed */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+#gallery p {
+    font-size: 1.2em; /* Increase paragraph size */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+
+h2 {
+    font-size: 2rem; /* Heading size */
+    margin-bottom: 1rem; /* Space below heading */
+}
+.slider-container {
+    position: relative; /* Allows positioning of buttons */
+    overflow: hidden; /* Hide overflow to show only one image */
+    width: 80%; /* Full width of parent container */
+    max-height:300px;
+}
+
+.slider {
+    display: flex; /* Arrange images in a row */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.slider-item {
+    min-width: 100%; /* Each item takes the full width */
+    box-sizing: border-box; /* Include padding and borders in width */
+}
+
+.slider-item img {
+    width: 50%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+#aboutUs {
+    padding: 50px 20px;
+    background-color: #cccb;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between items */
+}
+
+.about-text, .our-mission, .our-values {
+    flex: 1 1 300px; /* Responsive flex items */
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.about-text:hover, .our-mission:hover, .our-values:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.about-text h3, .our-mission h3, .our-values h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.about-text p, .our-mission p, .our-values li {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.our-values ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* Contact Section Styles */
+#contact {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: left; /* Align text to the left */
+}
+
+.contact-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between the form and info */
+    animation: backgroundChange 8s infinite alternate;
+    
+}
+
+form {
+    max-width: 600px; /* Reduced form width */
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-right: 25px; /* Space between form and info */
+}
+
+.contact-info {
+    display: flex; /* Flexbox layout for info sections */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space between office and follow sections */
+    flex: 0.7; /* Take available space */
+}
+input, textarea {
+    margin-bottom: 15px; /* Space between input fields */
+    padding: 10px; /* Padding inside the input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    width: 100%; /* Make input fields full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+@keyframes colorChange {
+    0% {
+        background-color: #ffcccc;
+    }
+    25% {
+        background-color: #ccffcc;
+    }
+    50% {
+        background-color: #ccccff;
+    }
+    75% {
+        background-color: #ffffcc;
+    }
+    100% {
+        background-color: #ffcccc;
+    }
+}
+textarea {
+    animation: colorChange 4s infinite alternate; /* Animation for color change */
+}
+
+.office-info, .follow-us {
+    padding: 15px;
+    background-color: #ffffff; /* White background for info sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 10px; /* Space between sections */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.office-info:hover, .follow-us:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.social-media {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+}
+
+.social-media li {
+    display: inline; /* Horizontal list */
+    margin-right: 15px; /* Spacing between links */
+}
+
+
+.social-media a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+.social-media {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox for horizontal layout */
+}
+
+.social-media li {
+    margin-right: 15px; /* Space between icons */
+}
+
+.social-media img {
+    width: 40px; /* Adjust size of icons */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth transition for hover */
+}
+
+.social-media img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Padding */
+    text-align: center; /* Center text */
+}
+
+.footer-container {
+    max-width: 1200px; /* Limit width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Side padding */
+}
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 10px 0; /* Margin for spacing */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center the links */
+}
+
+.footer-links li {
+    margin: 0 15px; /* Space between links */
+}
+
+.footer-links a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+.footer-links a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+section {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+}
+.hidden {
+    display: none; /* Hide elements with this class */
+}
+
+h2 {
+    color: #333; /* Darker color for headings */
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 10px 0; /* Margin for spacing */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center the links */
+}
+
+.footer-links li {
+    margin: 0 15px; /* Space between links */
+}
+
+.footer-links a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+.footer-links a:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+
+
+
